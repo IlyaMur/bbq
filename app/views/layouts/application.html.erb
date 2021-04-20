@@ -9,8 +9,54 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a> <%= link_to 'BBQ', root_path, class: 'navbar-brand' %> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <body>
-    <%= yield %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <% if flash.any? %>
+          <% flash.each do |err, text| %>
+            <%= text %>
+          <% end %>
+        <% end %>
+        <%= yield %>
+      </div>
+      <div class="col-lg-3">
+        <div class="well sidebar-nav">
+          <h3>Sidebar</h3>
+          <ul class="nav nav-list">
+            <li class="nav-header">Sidebar</li>
+            <li><%= link_to "Link1", "/path1"  %></li>
+            <li><%= link_to "Link2", "/path2"  %></li>
+            <li><%= link_to "Link3", "/path3"  %></li>
+          </ul>
+        </div><!--/.well -->
+      </div><!--/span-->
+    </div><!--/row-->
+
+    <footer>
+      <p>&copy; Company 2016</p>
+    </footer>
+
+    </div> <!-- /container -->
   </body>
 </html>
