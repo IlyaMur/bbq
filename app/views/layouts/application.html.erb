@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BbqForMyFriends</title>
+    <title>BBQForMyFriends</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -25,10 +25,10 @@
             </li>
           <% else %>
             <li class="nav-item">
-              <a <%= link_to 'Войти', new_user_session_path, class: 'nav-link' %> </a>
+              <a <%= link_to 'Вход', new_user_session_path, class: 'nav-link' %> </a>
             </li>
             <li class="nav-item">
-              <a> <%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link' %> </a>
+              <a> <%= link_to 'Регистрация', new_user_registration_path, class: 'nav-link' %> </a>
             </li>
           <% end %>
       </div>
@@ -44,9 +44,6 @@
         <%= yield %>
       </div>
     </div>
-    <footer>
-      <p>&copy; Company 2021</p>
-    </footer>
-  </div> <!-- /container -->
+  </div> 
   </body>
 </html>

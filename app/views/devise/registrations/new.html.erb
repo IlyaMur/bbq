@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-12 buffer-top">
+    <h2>Регистрация на Шашлычках</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 buffer-top">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-group">
+        <%= f.label :email, 'Почта', class: 'col-form-label-lg' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, 'Пароль', class: 'col-form-label-lg' %>
+        <% if @minimum_password_length %>
+        <em>(минимум <%= @minimum_password_length %> символов)</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, 'Подтверждение пароля', class: 'col-form-label-lg' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit 'Зарегистрироваться', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
