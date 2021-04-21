@@ -6,31 +6,34 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all'%>
+    <%= javascript_pack_tag 'application'%>
   </head>
 <body>
+
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a> <%= link_to 'BBQ', root_path, class: 'navbar-brand' %> </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-        </ul>
+      <strong> <%= link_to 'BBQ', root_path, class: 'navbar-brand' %> </strong>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <a <%= link_to 'Профиль', current_user, class: 'nav-link' %> </a>
+            </li>
+            <li class="nav-item">
+              <a> <%= link_to 'Выйти', destroy_user_session_path, :method => :delete, class: 'nav-link' %> </a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a <%= link_to 'Войти', new_user_session_path, class: 'nav-link' %> </a>
+            </li>
+            <li class="nav-item">
+              <a> <%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link' %> </a>
+            </li>
+          <% end %>
       </div>
     </nav>
-  </div>
 
-  <div class="container">
     <div class="row">
       <div class="col-lg-9">
         <% if flash.any? %>
@@ -40,23 +43,10 @@
         <% end %>
         <%= yield %>
       </div>
-      <div class="col-lg-3">
-        <div class="well sidebar-nav">
-          <h3>Sidebar</h3>
-          <ul class="nav nav-list">
-            <li class="nav-header">Sidebar</li>
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-          </ul>
-        </div><!--/.well -->
-      </div><!--/span-->
-    </div><!--/row-->
-
+    </div>
     <footer>
-      <p>&copy; Company 2016</p>
+      <p>&copy; Company 2021</p>
     </footer>
-
-    </div> <!-- /container -->
+  </div> <!-- /container -->
   </body>
 </html>
