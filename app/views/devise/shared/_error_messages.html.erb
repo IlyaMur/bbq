@@ -1,12 +1,17 @@
-<% if resource.errors.any? %>
+<% errors = resource.errors %>
+<% if errors.any? %>
   <div id="error_explanation">
-    <% resource.errors.full_messages.each do |message| %>
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <li><%= message %></li>
+    <div class="alert alert-danger">
+      <div class="lead buffer-bottom">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true">&times;</span>
         </button>
-      </div>  
-    <% end %>
+      </div>
+        <ul> 
+          <% errors.full_messages.each do |message| %>
+            <%= content_tag :li, message %> 
+          <% end %>
+        </ul>
+      </div>
   </div>
 <% end %>

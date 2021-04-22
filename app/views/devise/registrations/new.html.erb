@@ -1,14 +1,18 @@
 <div class="row">
-  <div class="col-md-12 buffer-top">
+  <div class="col-lg-12">
+    <%= render "devise/shared/error_messages", resource: resource %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 buffer-top">
     <h2>Регистрация на Шашлычках</h2>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-6 buffer-top">
+  <div class="col-lg-9 buffer-top">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-
       <div class="form-group">
         <%= f.label :email, 'Почта', class: 'col-form-label-lg' %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>

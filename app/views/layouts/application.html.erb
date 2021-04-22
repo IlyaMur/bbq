@@ -33,19 +33,9 @@
           <% end %>
       </div>
     </nav>
-
     <div class="row">
       <div class="col-lg-9">
-        <% if flash.any? %>
-          <% flash.each do |err, text| %>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <%= text %>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          <% end %>
-        <% end %>
+        <%= render 'partials/flash' %>
         <%= yield %>
       </div>
     </div>
