@@ -6,7 +6,7 @@ ru:
 
     attributes:
       user:
-        email: 'Email'
+        email: 'Почта'
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
@@ -27,6 +27,12 @@ ru:
   app:
     name: 'Шашлыки'
     author: 'Илья Мур'
+    back: 'Назад'
+    save: 'Сохранить'
+    sure?: 'Уверены?'
+    enter: 'Войти'
+    del: 'Удалить аккаунт'
+    change: 'Изменить'
 
   error:
     one: '%{count} ошибка'

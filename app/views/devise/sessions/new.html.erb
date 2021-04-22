@@ -9,12 +9,12 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
       <div class="form-group">
-        <%= f.label :email, 'Почта', class: 'col-form-label-lg' %>
+        <%= f.label :email, class: 'col-form-label-lg' %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password, 'Пароль', class: 'col-form-label-lg' %>
+        <%= f.label :password, class: 'col-form-label-lg' %>
         <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
       </div>
 
@@ -26,7 +26,7 @@
       <% end %>
 
       <div class="actions buffer-top">
-        <%= f.submit "Войти", class: 'btn btn-primary buffer-bottom' %>
+        <%= f.submit t('app.enter'), class: 'btn btn-primary buffer-bottom' %>
       </div>
     <% end %>
   </div>

@@ -3,5 +3,8 @@
 <div class="row">
   <div class="col-md-6 buffer-top">
     <%= render 'form', model: @event %>
+    <% if current_user_can_edit?(@event) %>
+      <%= button_to "Удалить событие", @event, data: { confirm: t("app.sure?") }, class: 'btn btn-warning buffer-both', method: :delete %>
+    <% end %>
   </div>
 </div>
