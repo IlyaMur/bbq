@@ -9,7 +9,7 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="form-group">
-        <%= f.label :email, 'Почта', class: 'col-form-label-lg' %>
+        <%= f.label :email, class: 'col-form-label-lg' %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
       </div>
 
@@ -18,7 +18,7 @@
       <% end %>
 
        <div class="form-group">
-        <%= f.label :password, 'Пароль', class: 'col-form-label-lg' %>
+        <%= f.label :password, class: 'col-form-label-lg' %>
         <% if @minimum_password_length %>
         <em>(минимум <%= @minimum_password_length %> символов)</em>
          <br>
