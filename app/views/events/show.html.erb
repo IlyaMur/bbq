@@ -15,10 +15,10 @@
           </div>
           <% if current_user_can_edit?(@event) %>
             <div class="buffer-top">
-              <%= link_to t('app.change'), edit_event_path(@event),
-              class: 'btn btn-primary' %>
-          <% end %>
+              <%= link_to t('app.change'), edit_event_path(@event), class: 'btn btn-primary' %>
+              <%= link_to t('app.del_event'), @event, data: { confirm: t("app.sure?") }, class: 'btn btn-danger buffer-both', method: :delete %>
             </div>
+          <% end %>
         </div>
       </div>
     </div>
