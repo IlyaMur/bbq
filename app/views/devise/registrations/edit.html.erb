@@ -41,7 +41,7 @@
         <%= f.submit t("app.save"), class: 'btn btn-primary' %>
       </div>
     <% end %>
-    <%= button_to t('app.del_acc'), registration_path(resource_name), data: { confirm: "Вы уверены?" }, class: 'btn btn-warning buffer-top float-right', method: :delete %>
+    <%= button_to t('app.del_acc'), registration_path(resource_name), data: { confirm: t('app.sure?') }, class: 'btn btn-warning buffer-top float-right', method: :delete %>
     <br>
     <%= link_to t('app.back'), :back, class: 'buffer-both' %>
     </div>
