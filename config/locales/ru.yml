@@ -23,6 +23,14 @@ ru:
       destroyed: 'Вы удалили мероприятие :('
     users:
       updated: 'Вы обновили свой профиль'
+    comments:
+      created: 'Коммент успешно создан'
+      error: 'Что-то пошло не так'
+      destroyed: 'Комментарий успешно удален'
+    subscription:
+      error: 'Что-то пошло не так'
+      created: 'Подписка оформлена'
+      destroyed: 'Вы отписались'
 
   app:
     name: 'Шашлыки'
@@ -39,3 +47,10 @@ ru:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
     many: '%{count} ошибок'
+
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить комментарий?'
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить подписку?'
