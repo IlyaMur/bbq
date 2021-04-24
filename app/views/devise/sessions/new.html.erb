@@ -3,35 +3,29 @@
     <h2>По шашлычку?</h2>
   </div>
 </div>
-
 <div class="row">
   <div class="offset-2 col-8">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
       <div class="form-group">
         <%= f.label :email, class: 'col-form-label-lg' %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
       </div>
-
       <div class="form-group">
         <%= f.label :password, class: 'col-form-label-lg' %>
         <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
       </div>
-
       <% if devise_mapping.rememberable? %>
       <div class="form-check">
         <%= f.check_box :remember_me, class: "form-check-input" %>
         <%= f.label :remember_me, 'Запомнить меня', class: 'form-check-label' %>
       </div>
       <% end %>
-
       <div class="actions buffer-top">
         <%= f.submit t('app.enter'), class: 'btn btn-primary buffer-bottom' %>
       </div>
     <% end %>
   </div>
 </div>
-
 <div class="row">
   <div class="offset-2 col-8">
     <%= render "devise/shared/links" %>
