@@ -15,6 +15,8 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+      comment:
+        body: 'Поле комментария'
 
   controllers:
     events:
@@ -30,7 +32,7 @@ ru:
     subscription:
       error: 'Что-то пошло не так'
       created: 'Подписка оформлена'
-      destroyed: 'Вы отписались'
+      destroyed: 'Участник отписан'
 
   app:
     name: 'Шашлыки'
