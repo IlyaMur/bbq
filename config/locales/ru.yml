@@ -45,6 +45,9 @@ ru:
     del_acc: 'Удалить аккаунт'
     change: 'Изменить'
     del_event: 'Удалить событие'
+    reg: 'Регистрация'
+    enter: 'Вход'
+    exit: 'Выход'
 
   error:
     one: '%{count} ошибка'

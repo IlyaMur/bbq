@@ -10,10 +10,10 @@
       <ul class="nav navbar-nav justify-content-end ml-auto">
         <% if user_signed_in? %>
           <li><%= link_to "#{current_user.name}", current_user, class: 'nav-link' %></li>
-          <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete, class: 'nav-link' %></li>
+          <li><%= link_to t('app.exit'), destroy_user_session_path, :method => :delete, class: 'nav-link' %></li>
         <% else %>
-          <li><%= link_to 'Вход', new_user_session_path, class: 'nav-link' %></li>
-          <li><%= link_to 'Регистрация', new_user_registration_path, class: 'nav-link' %> </li>
+          <li><%= link_to t('app.enter'), new_user_session_path, class: 'nav-link' %></li>
+          <li><%= link_to t('app.reg'), new_user_registration_path, class: 'nav-link' %> </li>
         <% end %>
       </ul>
     </div>
