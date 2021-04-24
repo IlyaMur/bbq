@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
-  resources :subscriptions
-  resources :comments
   devise_for :users
-  resources :users
-  root 'events#index'
-  
-  resources :users, only: %i[show update edit]
-
+  root "events#index"
   resources :events do
-    resources :comments, only: %i[create destroy]
-    resources :subscriptions, only: %i[create destroy]
+    resources :comments, only: [:create, :destroy]
+    resources :subscriptions, only: [:create, :destroy]
   end
+  resources :users, only: [:show, :edit, :update]
 end

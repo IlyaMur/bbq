@@ -18,6 +18,10 @@ ru:
       comment:
         body: 'Поле комментария'
         user_name: 'Имя'
+      subscription:
+        user_name: 'Имя'
+        user_email: 'Почта'
+
 
   controllers:
     events:
