@@ -17,6 +17,7 @@ ru:
         description: 'Описание'
       comment:
         body: 'Поле комментария'
+        user_name: 'Имя'
 
   controllers:
     events:
