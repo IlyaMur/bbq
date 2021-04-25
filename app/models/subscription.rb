@@ -19,6 +19,7 @@ class Subscription < ApplicationRecord
             uniqueness: { scope: :event_id },
             unless: -> { user.present? }
 
+
   def user_name
     user.present? ? user.name : super
   end

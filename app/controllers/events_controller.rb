@@ -9,19 +9,17 @@ class EventsController < ApplicationController
 
   def show
     @new_comment = @event.comments.build(params[:comment])
-    @new_subscription = @event.subscriptions.build(params[:subscriptions])
+    @new_subscription = @event.subscriptions.build(params[:subscription])
   end
 
   def new
     @event = current_user.events.build
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @event = current_user.events.build(event_params)
-
     if @event.save
       redirect_to @event, notice: I18n.t("controllers.events.created")
     else
