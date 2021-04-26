@@ -12,7 +12,7 @@ class User < ApplicationRecord
   private
 
   def set_name
-    self.name = "Товарищ №#{rand(1000)}" if self.name.blank?
+    self.name = "Человек №#{rand(1000)}" if self.name.blank?
   end
 
   def link_subscriptions

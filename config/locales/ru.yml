@@ -1,5 +1,12 @@
 ru:
   activerecord:
+    errors:
+      models:
+        subscription:
+          attributes:
+            user:
+              event_owner: 'Вы владелец события'
+              
     models:
       user: 'Пользователь'
       event: 'Событие'

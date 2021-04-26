@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="nav navbar-nav justify-content-end ml-auto">
         <% if user_signed_in? %>
-          <li><%= link_to "#{current_user.name}", current_user, class: 'nav-link' %></li>
+          <li><%= link_to current_user.name, current_user, class: 'nav-link' %></li>
           <li><%= link_to t('app.exit'), destroy_user_session_path, :method => :delete, class: 'nav-link' %></li>
         <% else %>
           <li><%= link_to t('app.enter'), new_user_session_path, class: 'nav-link' %></li>
