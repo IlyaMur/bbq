@@ -13,29 +13,29 @@ class Subscription < ApplicationRecord
 
   with_options if: -> { user.present? } do
     validates :user, uniqueness: { scope: :event_id }
-    validate :checking_author
+    validate :is_user_event_owner
   end
 
   with_options unless: -> { user.present? } do
     validates :user_email, uniqueness: { scope: :event_id }
-    validate :checking_email
+    validate :is_email_already_used
   end
 
   def user_name
-    user.present? ? user.name : super
+    user&.name || super
   end
 
   def user_email
-    user.present? ? user.email : super
+    user&.email || super
   end
 
   private
 
-  def checking_author
+  def is_user_event_owner
     errors.add(:user, :event_owner) if event.user == user
   end
 
-  def checking_email
+  def is_email_already_used
     errors.add(:user_email, :used_email) if User.find_by(email: user_email)
   end
 end
