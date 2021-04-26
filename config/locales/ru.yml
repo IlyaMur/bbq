@@ -5,8 +5,10 @@ ru:
         subscription:
           attributes:
             user:
-              event_owner: 'Вы владелец события'
-              
+              event_owner: 'организатор мероприятия'
+            user_email:
+              used_email: 'уже используется'
+
     models:
       user: 'Пользователь'
       event: 'Событие'
@@ -28,6 +30,7 @@ ru:
       subscription:
         user_name: 'Имя'
         user_email: 'Почта'
+        user: 'Пользователь'
 
 
   controllers:

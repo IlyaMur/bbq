@@ -16,9 +16,10 @@ class Subscription < ApplicationRecord
     validate :checking_author
   end
 
-  validates :user_email,
-            uniqueness: { scope: :event_id },
-            unless: -> { user.present? }
+  with_options unless: -> { user.present? } do
+    validates :user_email, uniqueness: { scope: :event_id }
+    validate :checking_email
+  end
 
   def user_name
     user.present? ? user.name : super
@@ -31,7 +32,10 @@ class Subscription < ApplicationRecord
   private
 
   def checking_author
-    return unless event.user == user
-    errors.add(:user, :event_owner)
+    errors.add(:user, :event_owner) if event.user == user
+  end
+
+  def checking_email
+    errors.add(:user_email, :used_email) if User.find_by(email: user_email)
   end
 end
