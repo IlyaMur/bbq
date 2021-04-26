@@ -32,6 +32,6 @@ class Subscription < ApplicationRecord
 
   def checking_author
     return unless event.user == user
-    errors.add :user, :event_owner
+    errors.add(:user, :event_owner)
   end
 end
