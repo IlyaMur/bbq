@@ -15,6 +15,7 @@ ru:
 
     attributes:
       user:
+        avatar: 'Аватарка'
         email: 'Почта'
         name: 'Имя'
         password: 'Пароль'
@@ -48,6 +49,10 @@ ru:
       error: 'Что-то пошло не так'
       created: 'Подписка оформлена'
       destroyed: 'Участник отписан'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
 
   app:
     name: 'Шашлыки'
