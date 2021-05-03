@@ -65,7 +65,7 @@
         </div>
       <% end %>
       <div class="event-subscription-form">
-        <% unless @event.user == current_user %>
+        <% unless @event.user == current_user || @event.subscribers.include?(current_user)  %>
           <h4>Я пойду:</h4>
           <div>
             <%= render partial: 'subscriptions/form', locals: {
