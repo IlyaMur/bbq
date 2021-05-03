@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
   end
 
   def notify_subscibers(event, comment)
-    all_emails = event.subscriptions.map(&:user_email) | [event.user.email]
+    all_emails = event.subscriptions.map(&:user_email) + [event.user.email] - [comment.user.email]
 
     all_emails.each { |email| EventMailer.comment(event, comment, email).deliver_now }
   end
