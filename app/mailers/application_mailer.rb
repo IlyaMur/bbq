@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['MAILJET_SENDER']
+  default from: "BBQ PARTY #{ENV['MAILJET_SENDER']}"
   layout 'mailer'
 end
