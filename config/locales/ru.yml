@@ -8,6 +8,15 @@ ru:
               event_owner: 'организатор мероприятия'
             user_email:
               used_email: 'уже используется'
+    devise:
+      new:
+        forgot_your_password: 'Забыли пароль?'
+        send_me_reset_password_instructions: 'Сбросить пароль'
+      edit:
+        change_your_password: 'Сменить пароль'
+        new_password: 'Новый пароль'
+        confirm_new_password: 'Подтвердить новый пароль'
+        change_my_password: 'Сменить мой пароль'
 
     models:
       user: 'Пользователь'
