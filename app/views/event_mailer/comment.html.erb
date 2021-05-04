@@ -2,7 +2,7 @@
 <p><%= @comment.body %></p>
 <p><%= t '.author' %>: <strong><%= @comment.user_name %></strong></p>
 <%= t '.event' %>:
-<%= link_to "#{@event.title }", @event %>
+<%= link_to @event.title, @event %>
 <hr/>
 <h4><%= l @event.datetime %></h4>
 <%= t '.owner' %>:

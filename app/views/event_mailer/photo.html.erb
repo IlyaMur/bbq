@@ -1,7 +1,7 @@
 <h1><%= t '.title' %></h1>
 <p><%= t('.author') %>: <strong><%= @photo.user.name %></strong></p>
 <%= t '.event' %>:
-<%= link_to "#{@event.title }", @event %>
+<%= link_to @event.title, @event %>
 <hr/>
 <%= t '.owner' %>
 <h4><%= @event.user.name %></h4>
