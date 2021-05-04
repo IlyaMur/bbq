@@ -7,6 +7,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=<%=ENV['YANDEX_API_KEY']%>" type="text/javascript">  </script>
   </head>
 <body>
   <div class="container">
@@ -31,3 +32,6 @@
   </footer>
 </body>
 </html>
+
+
+  
