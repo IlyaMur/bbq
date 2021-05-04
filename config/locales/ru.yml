@@ -41,6 +41,8 @@ ru:
         user_name: 'Имя'
         user_email: 'Почта'
         user: 'Пользователь'
+      photo:
+        photo: 'Фото'
 
 
   controllers:
@@ -98,6 +100,7 @@ ru:
       consisted: 'Состоялось'
       owner: 'Организатор'
       subject: "Новый комментарий для события %{event}"
+      datetime: 'Время'
     subscription:
       title: 'Новая подписка'
       name: 'Имя'
@@ -107,6 +110,7 @@ ru:
       datetime: 'Состоится'
       owner: 'Организатор'
       subject: "Новая подписка для события %{event}"
+      datetime: 'Время'
     photo:
       title: 'Новая фотография'
       author: 'Автор'
@@ -114,4 +118,5 @@ ru:
       owner: 'Организатор'
       photo: 'Фотография'
       subject: "Новая фотография для события %{event}"
+      datetime: 'Время'
 
