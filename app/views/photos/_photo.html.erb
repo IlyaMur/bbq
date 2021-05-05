@@ -1,13 +1,12 @@
-<% image_title = tag.small("Добавил: #{render partial: 'users/user', object: photo.user}") %>
+<% image_title = "Добавил: #{render partial: 'users/user', object: photo.user}" %>
 
 <% 
   delete_icon = 
     link_to(
-      fa_icon('trash'), 
+      content_tag('div', tag.small('Удалить')), 
       event_photo_path(photo.event, photo), 
       method: :delete, 
       data: {confirm: 'Вы уверены?'},
-      class: 'del-icon'
     )
 %>
 
