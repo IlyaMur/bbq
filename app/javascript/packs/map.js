@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
   ymaps.ready(init);
   function init(){
     address = document.getElementById('map').getAttribute('data-address');
