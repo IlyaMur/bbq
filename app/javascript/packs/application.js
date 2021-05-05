@@ -7,12 +7,11 @@ import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap'
-import "@fortawesome/fontawesome-free/css/all"
 import "ekko-lightbox"
 import './lightbox'
 import './map'
+import "@fortawesome/fontawesome-free/css/all"
 
 Rails.start()
-Turbolinks.start()
 ActiveStorage.start()
 
