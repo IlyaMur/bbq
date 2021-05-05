@@ -30,11 +30,11 @@
   </div>
   <div class="row">
     <div class="col-md-8">
-      <div class="event-photos">
+      <div class="event-photos buffer-top">
         <div class="event-photos-gallery">
           <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
         </div>
-        <div class="event-photo-form">
+        <div class="event-photo-form buffer-top">
           <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
         </div>
       </div>
