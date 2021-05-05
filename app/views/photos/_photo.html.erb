@@ -11,7 +11,7 @@
     )
 %>
 
-<% image_title << delete_icon if current_user_can_edit?(photo.event) %>
+<% image_title << delete_icon if current_user_can_edit?(photo) %>
   
 <%= 
   link_to(
