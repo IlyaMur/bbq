@@ -3,7 +3,7 @@
 <% 
   delete_icon = 
     link_to(
-      content_tag('div', tag.small('Удалить')), 
+      content_tag('div', tag.small('Удалить фотографию')), 
       event_photo_path(photo.event, photo), 
       method: :delete, 
       data: {confirm: 'Вы уверены?'},
