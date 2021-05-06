@@ -9,9 +9,7 @@ import "channels"
 import 'bootstrap'
 import "ekko-lightbox"
 import './lightbox'
-import './map'
 import "@fortawesome/fontawesome-free/css/all"
 
 Rails.start()
 ActiveStorage.start()
-
