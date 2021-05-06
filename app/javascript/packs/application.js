@@ -7,9 +7,8 @@ import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap'
-import "ekko-lightbox"
-import './lightbox'
 import "@fortawesome/fontawesome-free/css/all"
+import 'lightbox2'
 
 Rails.start()
 ActiveStorage.start()
