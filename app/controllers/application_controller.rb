@@ -2,6 +2,12 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :current_user_can_edit?
 
+  def pincode_valid?(event)
+    return false if !event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
+    
+    true
+  end
+
   protected
 
   def configure_permitted_parameters

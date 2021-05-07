@@ -5,7 +5,11 @@ class CommentsController < ApplicationController
   def create
     @new_comment = @event.comments.build(comment_params)
     @new_comment.user = current_user
-    if @new_comment.save
+
+    if @new_comment.valid?
+      redirect_to root_path, alert: I18n.t('controllers.comments.error') and return unless pincode_valid?(@event)
+
+      @new_comment.save
       notify_subscibers(@event, @new_comment)
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else
