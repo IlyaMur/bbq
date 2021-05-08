@@ -128,6 +128,12 @@ ru:
       new_password: 'Новый пароль'
       confirm_new_password: 'Подтвердить новый пароль'
       change_my_password: 'Сменить мой пароль'
+    sessions:
+      new:
+        enter_message: 'Добро пожаловать'
+    shared:
+      links:
+        registration: 'Регистрация'
     registrations:
       edit:
         edit_user: 'Редактировать пользователя'
