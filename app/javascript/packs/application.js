@@ -3,14 +3,18 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+import lightbox from 'lightbox2/dist/js/lightbox';
 import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap'
 import "@fortawesome/fontawesome-free/css/all"
 import 'lightbox2'
+import './map'
 
 Rails.start()
 ActiveStorage.start()
 
 const images = require.context('../images', true)
+
+window.lightbox = lightbox;

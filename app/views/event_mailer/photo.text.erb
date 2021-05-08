@@ -1,10 +1,10 @@
-<%= t('event_mailer.photo.title') %>
+<%= t('.photo.title') %>
 ----------------------
 
-<%= t('event_mailer.photo.author') %> <%= @photo.user.name %>
-<%= t('event_mailer.photo.photo') %>
+<%= t('.photo.author') %> <%= @photo.user.name %>
+<%= t('.photo.photo') %>
 <%= link_to image_tag(@photo.photo.thumb.url), @photo.photo.url %>
 ----------------------
 
-<%= t('event_mailer.photo.event') %><%= link_to @event.title, @event %>
-<%= t('event_mailer.photo.owner') %><%= @event.user.name %>
+<%= t('.photo.event') %><%= link_to @event.title, @event %>
+<%= t('.photo.owner') %><%= @event.user.name %>

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def pincode_valid?(event)
     return false if !event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
-    
+
     true
   end
 

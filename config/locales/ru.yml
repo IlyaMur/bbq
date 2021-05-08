@@ -8,15 +8,6 @@ ru:
               event_owner: 'организатор мероприятия'
             user_email:
               used_email: 'уже используется'
-    devise:
-      new:
-        forgot_your_password: 'Забыли пароль?'
-        send_me_reset_password_instructions: 'Сбросить пароль'
-      edit:
-        change_your_password: 'Сменить пароль'
-        new_password: 'Новый пароль'
-        confirm_new_password: 'Подтвердить новый пароль'
-        change_my_password: 'Сменить мой пароль'
 
     models:
       user: 'Пользователь'
@@ -36,7 +27,7 @@ ru:
         description: 'Описание'
         pincode: 'Пинкод'
       comment:
-        body: 'Поле комментария'
+        body: 'Комментарий'
         user_name: 'Имя'
       subscription:
         user_name: 'Имя'
@@ -68,13 +59,13 @@ ru:
       destroyed: 'Вы удалили фотку'
 
   app:
+    app_title: 'Шашлыки для друзей'
     name: 'Шашлыки'
     author: 'Илья Мур'
     back: 'Назад'
     save: 'Сохранить'
     sure?: 'Уверены?'
     enter: 'Войти'
-    del_acc: 'Удалить аккаунт'
     change: 'Изменить'
     del_event: 'Удалить событие'
     reg: 'Регистрация'
@@ -83,6 +74,8 @@ ru:
     to_home: 'На главную'
     access_only_by_pincode: 'Доступ по коду'
     pincode: 'Пинкод'
+    change: 'Изменить'
+    or: 'или'
 
   error:
     one: '%{count} ошибка'
@@ -124,4 +117,66 @@ ru:
       photo: 'Фотография'
       subject: "Новая фотография для события %{event}"
       datetime: 'Время'
+
+  devise:
+    new:
+      forgot_your_password: 'Забыли пароль?'
+      send_me_reset_password_instructions: 'Сбросить пароль'
+      enter: 'Вход'
+    edit:
+      change_your_password: 'Сменить пароль'
+      new_password: 'Новый пароль'
+      confirm_new_password: 'Подтвердить новый пароль'
+      change_my_password: 'Сменить мой пароль'
+    registrations:
+      edit:
+        edit_user: 'Редактировать пользователя'
+        dont_change_if: 'Не изменяйте, если хотите оставить прежний'
+        chars: 'символов'
+        min: 'минимум'
+      new:
+        reg_message: 'Регистрация на Шашлыках'
+        pass_confirm: 'Подтверждение пароля'
+        password: 'Пароль'
+        email: 'Почта'
+        registration: 'Регистрация'
+        del_acc: 'Удалить аккаунт'
+        confirm_change: 'подтвердить изменения'
+  
+  events:
+    index:
+      events: 'События'
+      create_event: 'Создать событие'
+    edit:
+      edit_event: 'Редактировать событие'
+    show:
+      i_will_go: 'Я пойду'
+      inviting: 'Зовет'
+      will_go: 'Пойдут'
+    new:
+      new_event: 'Новое событие'
+  subscriptions:
+    form:
+      subscribe: 'Подписаться'
+  photos:
+    form:
+      load: 'Загрузить'
+    photo:
+      del_photo: 'Удалить фотографию'
+      added: 'Добавил'
+      lightbox_photo: 'Фото'
+      lightbox_of: 'из'
+  comments:
+    form:
+      submit: 'Отправить'
+  users:
+    show:
+      no_event: 'Пользователь пока не организовал ни одного события'
+      org: "Организовал"
+      edit_profile: 'Редактировать профиль'
+    edit:
+      change_password: 'Сменить пароль'
+  partials:
+    form_errors:
+      form_has: 'В вашей форме'
 

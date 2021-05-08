@@ -1,12 +1,12 @@
-<% image_title = "Добавил: #{render partial: 'users/user', object: photo.user}" %>
+<% image_title = "#{t('.added')} #{render partial: 'users/user', object: photo.user}" %>
 
 <% 
   delete_icon = 
     link_to(
-      content_tag('div', tag.small('Удалить фотографию')), 
+      content_tag('div', t('.del_photo')), 
       event_photo_path(photo.event, photo), 
       method: :delete, 
-      data: {confirm: 'Вы уверены?'},
+      data: {confirm: t('app.sure?')},
     )
 %>
 
@@ -24,3 +24,9 @@
   ) 
 %>
 </span>
+
+<script>
+  window.lightbox.option({
+    'albumLabel': "<%=t('.lightbox_photo')%> %1 <%=t('.lightbox_of') %> %2"
+  });
+</script>
