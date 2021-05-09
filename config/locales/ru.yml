@@ -76,6 +76,7 @@ ru:
     pincode: 'Пинкод'
     change: 'Изменить'
     or: 'или'
+    back: 'вернуться'
 
   error:
     one: '%{count} ошибка'
@@ -131,6 +132,7 @@ ru:
     sessions:
       new:
         enter_message: 'Добро пожаловать'
+        remember?: Запомнить меня
     shared:
       links:
         registration: 'Регистрация'
@@ -182,6 +184,8 @@ ru:
       edit_profile: 'Редактировать профиль'
     edit:
       change_password: 'Сменить пароль'
+    form:
+
   partials:
     form_errors:
       form_has: 'В вашей форме'
