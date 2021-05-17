@@ -99,7 +99,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'https://bbq-for-my-friends.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'https://warm-meetings.ru/' }
   config.action_mailer.delivery_method = :mailjet
 
   # Inserts middleware to perform automatic connection switching.
