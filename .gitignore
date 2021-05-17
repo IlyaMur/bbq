@@ -25,7 +25,7 @@
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
-.DS_Store
+
 *.tmp
 
 /public/assets
@@ -33,7 +33,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-/config/database.yml
 
 /public/uploads
 /public/packs
