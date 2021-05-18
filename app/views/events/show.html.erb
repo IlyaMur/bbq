@@ -14,7 +14,8 @@
             </h3>
             <p><%= @event.description %></p>
           </div>
-          <% if current_user_can_edit?(@event) %>
+
+          <% if policy(@event).edit? %>
             <div class="buffer-both">
               <%= link_to t('app.change'), edit_event_path(@event),
                 class: 'btn btn-primary' %>

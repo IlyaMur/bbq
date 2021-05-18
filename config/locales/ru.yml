@@ -190,3 +190,6 @@ ru:
     form_errors:
       form_has: 'В вашей форме'
 
+  pundit:
+      not_authorized: 'Вы не авторизованы'
+        

@@ -20,6 +20,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog-aws'
 gem 'mailjet'
+gem 'pundit'
 
 group :production do
   gem 'pg'
@@ -34,6 +35,8 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano-passenger'
   gem 'capistrano-bundler'
+  gem 'rspec-rails', '~> 4.0.1'
+  gem 'factory_bot_rails'
 end
 
 group :development do
