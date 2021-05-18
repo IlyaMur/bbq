@@ -1,6 +1,8 @@
 class EventPolicy < ApplicationPolicy
   def show?
-    true
+    (record.pincode.blank? ||
+      (user.present? && user == record.user)) ||
+      record.pincode_valid?(cookies["events_#{record.id}_pincode"])
   end
 
   def update?

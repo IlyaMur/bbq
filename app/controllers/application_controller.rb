@@ -26,4 +26,8 @@ class ApplicationController < ActionController::Base
     flash[:alert] = t('pundit.not_authorized')
     redirect_to(request.referrer || root_path)
   end
+
+  def pundit_user
+    CookiesContext.new(current_user, cookies)
+  end
 end

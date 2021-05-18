@@ -192,4 +192,5 @@ ru:
 
   pundit:
       not_authorized: 'Вы не авторизованы'
+      wrong_pincode: 'Пинкод введен неверно'
         
