@@ -1,30 +1,34 @@
 class CommentsController < ApplicationController
   before_action :set_event, only: %i[create destroy]
   before_action :set_comment, only: %i[destroy]
+  after_action :verify_authorized, only: %i[create destroy]
 
   def create
     @new_comment = @event.comments.build(comment_params)
     @new_comment.user = current_user
 
-    if @new_comment.valid?
-      redirect_to root_path, alert: I18n.t('controllers.comments.error') and return unless pincode_valid?(@event)
+    authorize @new_comment
 
-      @new_comment.save
+    if @new_comment.save
       notify_subscibers(@event, @new_comment)
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else
       render 'events/show', alert: I18n.t('controllers.comments.error')
     end
+  rescue Pundit::NotAuthorizedError
+    redirect_to root_path, alert: I18n.t('pundit.not_authorized')
   end
 
   def destroy
     message = { notice: I18n.t('controllers.comments.destroyed') }
-    if current_user_can_edit?(@comment)
-      @comment.destroy!
-    else
-      message alert: I18n.t('controllers.comments.error')
-    end
+
+    authorize @comment
+
+    @comment.destroy!
+
     redirect_to @event, message
+  rescue Pundit::NotAuthorizedError
+    redirect_to @event, alert: I18n.t('pundit.not_authorized')
   end
 
   private

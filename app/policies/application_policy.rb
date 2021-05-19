@@ -37,6 +37,19 @@ class ApplicationPolicy
     false
   end
 
+  def event_for_record_valid?
+    event = record.event
+
+    return true if event.user == user
+    return false if !event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
+
+    true
+  end
+
+  def current_user_can_delete?
+    record.event.user == user || record.user == user
+  end
+
   class Scope
     attr_reader :user, :scope
 

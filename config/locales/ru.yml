@@ -83,13 +83,6 @@ ru:
     few: '%{count} ошибки'
     many: '%{count} ошибок'
 
-  comments:
-    comment:
-      destroy_confirm: 'Вы уверены, что хотите удалить комментарий?'
-  subscriptions:
-    subscription:
-      destroy_confirm: 'Вы уверены, что хотите удалить подписку?'
-  
   event_mailer:
     comment:
       title: 'Новый комментарий'
@@ -164,6 +157,8 @@ ru:
     new:
       new_event: 'Новое событие'
   subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить подписку?'
     form:
       subscribe: 'Подписаться'
   photos:
@@ -175,6 +170,8 @@ ru:
       lightbox_photo: 'Фото'
       lightbox_of: 'из'
   comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить комментарий?'
     form:
       submit: 'Отправить'
   users:

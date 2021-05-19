@@ -1,8 +1,14 @@
 class EventPolicy < ApplicationPolicy
   def show?
-    (record.pincode.blank? ||
-      (user.present? && user == record.user)) ||
-      record.pincode_valid?(cookies["events_#{record.id}_pincode"])
+    return true if record.pincode.blank?
+    return true if user == record.user
+    return true if record.pincode_valid?(cookies["events_#{record.id}_pincode"])
+
+    false
+  end
+
+  def create?
+    true
   end
 
   def update?
@@ -20,7 +26,7 @@ class EventPolicy < ApplicationPolicy
   private
 
   def event_owner?
-    user.present? && record.user == user
+    record.user == user
   end
 
   class Scope

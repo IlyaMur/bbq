@@ -4,12 +4,6 @@ class ApplicationController < ActionController::Base
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  def pincode_valid?(event)
-    return false if !event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"]) && event.pincode.present?
-
-    true
-  end
-
   protected
 
   def configure_permitted_parameters
