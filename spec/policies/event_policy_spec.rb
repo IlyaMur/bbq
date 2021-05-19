@@ -23,14 +23,14 @@ describe EventPolicy do
 
   describe 'another user' do
     let(:another_user) { FactoryBot.create(:user) }
-    let(:another_user_w_o_pincode) { UserContext.new(another_user, {}) }
+    let(:another_user_wo_pincode) { UserContext.new(another_user, {}) }
     let(:another_user_w_pincode) { UserContext.new(another_user, correct_cookies) }
 
     permissions :edit?, :update?, :destroy? do
-      it { is_expected.not_to permit(another_user_w_o_pincode, event_wo_pincode) }
+      it { is_expected.not_to permit(another_user_wo_pincode, event_wo_pincode) }
     end
     permissions :show? do
-      it { is_expected.not_to permit(another_user_w_o_pincode, event_w_pincode) }
+      it { is_expected.not_to permit(another_user_wo_pincode, event_w_pincode) }
     end
     permissions :show? do
       it { is_expected.to permit(another_user_w_pincode, event_w_pincode) }
