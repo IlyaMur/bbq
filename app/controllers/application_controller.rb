@@ -28,6 +28,6 @@ class ApplicationController < ActionController::Base
   end
 
   def pundit_user
-    CookiesContext.new(current_user, cookies)
+    UserContext.new(current_user, cookies)
   end
 end

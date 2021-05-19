@@ -1,4 +1,4 @@
-class CookiesContext
+class UserContext
   attr_reader :user, :cookies
 
   def initialize(user, cookies)

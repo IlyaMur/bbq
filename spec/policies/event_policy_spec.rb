@@ -1,37 +1,50 @@
 require 'rails_helper'
 
-RSpec.describe EventPolicy do
-  let(:user) { create(:user) }
-  let(:event) { create(:event, user: user) }
+describe EventPolicy do
+  subject { described_class }
 
-  subject { EventPolicy }
+  let(:user) { FactoryBot.create(:user) }
 
-  context 'anonymous' do
-    permissions :show? do
-      it { is_expected.to permit(nil, Event) }
-    end
+  let(:event_wo_pincode) { FactoryBot.create(:event, user: user) }
+  let(:event_w_pincode) { FactoryBot.create(:event, user: user, pincode: '777') }
+
+  let(:correct_cookies) { { "events_#{event_w_pincode.id}_pincode" => '777' } }
+
+  describe 'event owner' do
+    let(:event_owner) { UserContext.new(user, {}) }
 
     permissions :edit?, :update?, :destroy? do
-      it { is_expected.not_to permit(nil, Event) }
+      it { is_expected.to permit(event_owner, event_wo_pincode) }
+    end
+    permissions :show? do
+      it { is_expected.to permit(event_owner, event_w_pincode) }
     end
   end
 
-  context 'user is owner' do
-    permissions :show?, :edit?, :update?, :destroy? do
-      it { is_expected.to permit(user, event) }
+  describe 'another user' do
+    let(:another_user) { FactoryBot.create(:user) }
+    let(:another_user_w_o_pincode) { UserContext.new(another_user, {}) }
+    let(:another_user_w_pincode) { UserContext.new(another_user, correct_cookies) }
+
+    permissions :edit?, :update?, :destroy? do
+      it { is_expected.not_to permit(another_user_w_o_pincode, event_wo_pincode) }
+    end
+    permissions :show? do
+      it { is_expected.not_to permit(another_user_w_o_pincode, event_w_pincode) }
+    end
+    permissions :show? do
+      it { is_expected.to permit(another_user_w_pincode, event_w_pincode) }
     end
   end
 
-  context 'user is not owner' do
-    let(:other_user) { create(:user) }
-    let(:other_event) { create(:event, user: other_user) }
-
-    permissions :show? do
-      it { is_expected.to permit(user, other_event) }
-    end
+  describe 'anonymous' do
+    let(:anon_w_pincode) { UserContext.new(nil, correct_cookies) }
 
     permissions :edit?, :update?, :destroy? do
-      it { is_expected.not_to permit(user, other_event) }
+      it { is_expected.not_to permit(anon_w_pincode, event_wo_pincode) }
+    end
+    permissions :show? do
+      it { is_expected.to permit(anon_w_pincode, event_w_pincode) }
     end
   end
 end
