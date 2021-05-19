@@ -24,4 +24,4 @@ production:
   adapter: postgresql
   user: <%= Rails.application.credentials.dig(:production, :database_username) %>
   password: <%= Rails.application.credentials.dig(:production, :database_password) %>
-  database: warmmeetings
+  database: myapp
