@@ -15,8 +15,6 @@ class CommentsController < ApplicationController
     else
       render 'events/show', alert: I18n.t('controllers.comments.error')
     end
-  rescue Pundit::NotAuthorizedError
-    redirect_to root_path, alert: I18n.t('pundit.not_authorized')
   end
 
   def destroy
@@ -27,8 +25,6 @@ class CommentsController < ApplicationController
     @comment.destroy!
 
     redirect_to @event, message
-  rescue Pundit::NotAuthorizedError
-    redirect_to @event, alert: I18n.t('pundit.not_authorized')
   end
 
   private

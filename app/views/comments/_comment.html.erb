@@ -9,7 +9,7 @@
       <% end %>
     </span>
     <em><%= l comment.created_at, format: :short %></em>
-    <% if current_user_can_edit?(comment) %>
+    <% if policy(comment).current_user_can_delete? %>
       <%= link_to(
               fa_icon('trash'), event_comment_path(comment.event, comment),
               method: :delete, data: {confirm: t('.destroy_confirm')}

@@ -10,7 +10,7 @@
     )
 %>
 
-<% image_title << delete_icon if current_user_can_edit?(photo) %>
+<% image_title << delete_icon if policy(photo).current_user_can_delete? %>
 
 <%= 
   link_to(

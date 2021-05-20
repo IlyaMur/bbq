@@ -1,8 +1,4 @@
 class PhotoPolicy < ApplicationPolicy
-  def show?
-    true
-  end
-
   def create?
     event_for_record_valid?
   end
