@@ -3,6 +3,8 @@ lock "~> 3.11.2"
 set :application, 'warm-meetings'
 set :repo_url, "git@github.com:IlyaMur/bbq.git"
 
+after 'deploy:restart', 'resque:restart'
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

@@ -21,6 +21,7 @@ gem 'rmagick'
 gem 'fog-aws'
 gem 'mailjet'
 gem 'pundit'
+gem 'resque'
 
 group :production do
   gem 'pg'
@@ -35,8 +36,8 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano-passenger'
   gem 'capistrano-bundler'
-  gem 'rspec-rails', '~> 4.0.1'
-  gem 'factory_bot_rails'
+  gem 'letter_opener'
+  gem 'capistrano-resque', require: false
 end
 
 group :development do
@@ -54,6 +55,8 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 4.0.1'
+  gem 'factory_bot_rails'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
