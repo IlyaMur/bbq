@@ -11,6 +11,7 @@ server 'warm-meetings.ru', user: 'deploy', roles: %w[app db web resque_worker]
 
 set :resque_environment_task, true
 set :workers, { "#{fetch(:application)}*" => 1 }
+set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa) }
 
 # role-based syntax
 # ==================
