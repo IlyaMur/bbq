@@ -1,6 +1,6 @@
 lock "~> 3.16.0"
 
-set :application, 'warm-meetings'
+set :application, 'bbq'
 set :repo_url, "git@github.com:IlyaMur/bbq.git"
 
 after 'deploy:restart', 'resque:restart'
