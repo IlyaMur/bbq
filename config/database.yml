@@ -25,6 +25,6 @@ production:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  user: warmmeetings
-  password: 123123
-  database: warmmeetings_prod
+  user: <%= Rails.application.credentials.dig(:production, :database_username) %>
+  password: <%= Rails.application.credentials.dig(:production, :database_password) %>
+  database: <%= Rails.application.credentials.dig(:production, :database_name) %>
