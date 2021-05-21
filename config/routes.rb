@@ -1,3 +1,5 @@
+require 'resque/server'
+
 Rails.application.routes.draw do
   devise_for :users
   root "events#index"
@@ -8,4 +10,5 @@ Rails.application.routes.draw do
     post :show, on: :member
   end
   resources :users, only: [:show, :edit, :update]
+  mount Resque::Server.new, :at => "/resque"
 end
