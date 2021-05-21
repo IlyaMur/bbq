@@ -10,7 +10,7 @@
 server 'warm-meetings.ru', user: 'deploy', roles: %w[app db web resque_worker]
 
 set :resque_environment_task, true
-set :workers, { 'bbq' => 1 }
+set :workers, { "#{fetch(:application)}*" => 1 }
 
 # role-based syntax
 # ==================
