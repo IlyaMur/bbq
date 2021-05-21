@@ -9,10 +9,7 @@
 
 server 'warm-meetings.ru', user: 'deploy', roles: %w[app db web resque_worker]
 
-# При запуске resque воркера загружать Rails приложение
 set :resque_environment_task, true
-
-# Будет запущен один воркер, обслуживающий очереди с именем "tubilinkz*"
 set :workers, { "#{fetch(:application)}*" => 1 }
 
 # role-based syntax
@@ -26,6 +23,8 @@ set :workers, { "#{fetch(:application)}*" => 1 }
 # role :app, %w{deploy@example.com}, my_property: :my_value
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
+
+
 
 # Configuration
 # =============

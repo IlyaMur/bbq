@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :subscriptions
-  
+
   validates :name, presence: true, length: { maximum: 35 }
 
   before_validation :set_name, on: :create
@@ -14,7 +14,7 @@ class User < ApplicationRecord
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
   end
-  
+
   private
 
   def set_name
@@ -24,5 +24,4 @@ class User < ApplicationRecord
   def link_subscriptions
     Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
   end
-
 end
