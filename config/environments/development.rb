@@ -4,7 +4,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.active_job.queue_adapter = :resque
-  config.active_job.queue_name_prefix = "warmmeetings_#{Rails.env}"
+  config.active_job.queue_name_prefix = "warm-meetings_#{Rails.env}"
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
