@@ -15,8 +15,6 @@ class User < ApplicationRecord
     devise_mailer.send(notification, self, *args).deliver_later
   end
 
-  private
-
   def set_name
     self.name = "Человек №#{rand(1000)}" if self.name.blank?
   end
