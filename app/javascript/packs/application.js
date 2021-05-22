@@ -9,8 +9,8 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap'
 import "@fortawesome/fontawesome-free/css/all"
-import 'lightbox2'
 import './map'
+import 'air-datepicker/dist/js/datepicker'
 
 Rails.start()
 ActiveStorage.start()
@@ -18,3 +18,4 @@ ActiveStorage.start()
 const images = require.context('../images', true)
 
 window.lightbox = lightbox;
+

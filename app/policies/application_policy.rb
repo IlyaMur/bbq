@@ -47,7 +47,7 @@ class ApplicationPolicy
   end
 
   def current_user_can_delete?
-    record.event.user == user || record.user == user
+    record.event.user == user || (record.user == user && user.present?)
   end
 
   class Scope
