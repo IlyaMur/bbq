@@ -10,5 +10,4 @@ Rails.application.routes.draw do
     post :show, on: :member
   end
   resources :users, only: [:show, :edit, :update]
-  mount Resque::Server.new, :at => "/resque"
 end
