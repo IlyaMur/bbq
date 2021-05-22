@@ -135,13 +135,13 @@ ru:
         dont_change_if: 'Не изменяйте, если хотите оставить прежний'
         chars: 'символов'
         min: 'минимум'
+        del_acc: 'Удалить аккаунт'
       new:
         reg_message: 'Регистрация на Шашлыках'
         pass_confirm: 'Подтверждение пароля'
         password: 'Пароль'
         email: 'Почта'
         registration: 'Регистрация'
-        del_acc: 'Удалить аккаунт'
         confirm_change: 'подтвердить изменения'
   
   events:
