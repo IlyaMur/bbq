@@ -7,14 +7,14 @@ class EmailSendedJob < ApplicationJob
 
     case object
     when Subscription
-      EventMailer.subscription(event, object).deliver_later
+      EventMailer.subscription(object).deliver_later
     when Comment
       all_emails.each do |email|
-        EventMailer.comment(event, object, email).deliver_later
+        EventMailer.comment(object, email).deliver_later
       end
     when Photo
       all_emails.each do |email|
-        EventMailer.photo(event, object, email).deliver_later
+        EventMailer.photo(object, email).deliver_later
       end
     end
   end
