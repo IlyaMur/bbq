@@ -22,6 +22,9 @@ gem 'fog-aws'
 gem 'mailjet'
 gem 'pundit'
 gem 'resque'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
 
 group :production do
   gem 'pg'
