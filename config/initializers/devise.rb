@@ -279,7 +279,8 @@ Devise.setup do |config|
 
   config.omniauth :vkontakte, Rails.application.credentials.dig(:development, :omni, :vk_id),
                   Rails.application.credentials.dig(:development, :omni, :vk_key),
-                  callback_url: 'https://warm-meetings.ru/users/auth/vkontakte/callback'
+                  callback_url: 'https://warm-meetings.ru/users/auth/vkontakte/callback',
+                  scope: 'name, email'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

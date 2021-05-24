@@ -1,25 +1,23 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    by_provider
+    oauth_action('facebook')
   end
 
   def vkontakte
-    by_provider
+    oauth_action('vkontakte')
   end
 
-  def by_provider
-    @user = User.find_for_oauth(request.env['omniauth.auth'])
+  private
+
+  def oauth_action(type)
+    @user = FindUserOauthService.find_user(request.env['omniauth.auth'])
 
     if @user.persisted?
-      flash[:notice] = I18n.t('devise.omniauth_callbacks.success')
+      set_flash_message(:notice, :success, kind: type) if is_navigational_format?
       sign_in_and_redirect @user, event: :authentication
     else
-      flash[:error] = I18n.t(
-        'devise.omniauth_callbacks.failure',
-        reason: 'authentication error'
-      )
-
-      redirect_to root_path
+      set_flash_message(:notice, :failure, kind: type, reason: 'error')
+      redirect_to new_user_registration_url
     end
   end
 end
