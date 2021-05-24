@@ -3,12 +3,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.find_for_facebook_oauth(request.env['omniauth.auth'])
 
     if @user.persisted?
-      set_flash_message(:notice, :success, kind: kind) if is_navigational_format?
+      flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: 'Facebook')
       sign_in_and_redirect @user, event: :authentication
     else
-      set_flash_message(:notice, :failure, kind: kind, reason: 'ошибка авторизации')
-      redirect_to new_user_registration_url
+      flash[:error] = I18n.t(
+        'devise.omniauth_callbacks.failure',
+        kind: 'Facebook',
+        reason: 'authentication error'
+      )
+
+      redirect_to root_path
     end
   end
 end
-
