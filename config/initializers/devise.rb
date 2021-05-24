@@ -274,7 +274,8 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   
   config.omniauth :facebook, Rails.application.credentials.dig(:development, :omni, :facebook_id),
-    Rails.application.credentials.dig(:development, :omni, :facebook_secret)
+    Rails.application.credentials.dig(:development, :omni, :facebook_secret),
+    callback_url: 'https://warm-meetings.ru/users/auth/facebook/callback'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
