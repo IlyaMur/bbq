@@ -3,10 +3,8 @@
 <% end %>
 
 <p>
-<%- resource_class.omniauth_providers.each do |provider| %>
-  <%= link_to "#{t('.sign_with')} #{OmniAuth::Utils.camelize(provider)}", 
-    omniauth_authorize_path(resource_name, provider), method: :post %><br />
-<% end -%>
+<%= link_to 'vk', user_vkontakte_omniauth_authorize_path, method: :post %><br />
+<%= link_to 'fb', user_facebook_omniauth_authorize_path, method: :post %><br />
 </p>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
@@ -16,3 +14,5 @@
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   <%= link_to t('devise.new.forgot_your_password'), new_password_path(resource_name) %><br />
 <% end %>
+
+
