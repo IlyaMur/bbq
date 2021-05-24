@@ -25,6 +25,7 @@ gem 'resque'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-vkontakte'
 
 group :production do
   gem 'pg'

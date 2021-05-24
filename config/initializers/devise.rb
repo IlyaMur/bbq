@@ -277,6 +277,10 @@ Devise.setup do |config|
     Rails.application.credentials.dig(:development, :omni, :facebook_secret),
     callback_url: 'https://warm-meetings.ru/users/auth/facebook/callback'
 
+  config.omniauth :vkontakte, Rails.application.credentials.dig(:development, :omni, :vk_key),
+    Rails.application.credentials.dig(:development, :omni, :vk_secret),
+    callback_url: 'https://warm-meetings.ru/users/auth/vkontakte/callback'
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
