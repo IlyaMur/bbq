@@ -13,6 +13,9 @@ module BbqForMyFriends
     config.load_defaults 6.1
     config.i18n.default_locale = :ru
 
+    config.generators do |g|
+      g.fixtures_replacement :factory_bot, dir: 'spec/factories'
+    end
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
