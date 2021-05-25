@@ -129,7 +129,7 @@ ru:
     shared:
       links:
         registration: 'Регистрация'
-        sign_with: 'Зайти с помощью'
+        sign_with: 'Войти с помощью'
     registrations:
       edit:
         edit_user: 'Редактировать пользователя'
@@ -144,6 +144,10 @@ ru:
         email: 'Почта'
         registration: 'Регистрация'
         confirm_change: 'подтвердить изменения'
+      omniauth_callbacks:
+        success: 'Логин выполнен успешно'
+        failure: 'Логин не выполнен'
+        error: 'Ошибка аутентификации'
   
   events:
     index:
