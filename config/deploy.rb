@@ -1,7 +1,7 @@
 lock "~> 3.16.0"
 
 set :application, 'bbq'
-set :repo_url, "git@github.com:IlyaMur/bbq.git"
+set :repo_url, "git@github.com:IlyaMur/warm_meetings.git"
 
 after 'deploy:restart', 'resque:restart'
 
