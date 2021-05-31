@@ -24,13 +24,12 @@ https://warm-meetings.ru/
 Приложение написано с использованием `Rails 6.1.3`. Необходима версия `Ruby 2.7.2` и выше.
 
 Для штатной установки `rmagick` необходимо установить его зависимости 
-```
-sudo apt-get install libmagickwand-dev imagemagick
-```
 
+    $ sudo apt-get install libmagickwand-dev imagemagick
+    
 В проекте используется `bundler`, для установки зависимостей следует ввести
 
-    bundle install
+    $ bundle install
 
 Приложению необходимы ключи для API AWS S3, yandex map, VK, FB и сервиса Mailjet.
 Для нормальной работы необходимо дополнить следующие переменнные в `Rails credentials` своими данными.
@@ -57,11 +56,11 @@ mailjet
  
  Для установки миграций
 
-    bundle exec rails db:migrate
+    $ bundle exec rails db:migrate
 
  Запуск осуществляется
 
-    bundle exec rails s
+    $ bundle exec rails s
 
  Приложение доступно по адресу `http://localhost:3000/`
 
